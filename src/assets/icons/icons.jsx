@@ -3,7 +3,7 @@ import sprite from "./sprite.svg";
 export const DynamicSvg = ({
   className = "",
   name = "",
-  size = 30,
+  size = 24,
   color = "transparent",
 }) => (
   <svg

@@ -1,10 +1,11 @@
 import React from "react";
-import Search from "./components/inputs/search.component";
+
+import Navbar from "./components/navbar/navbar.component";
 
 const Root = () => {
   return (
     <div>
-      <Search />
+      <Navbar />
     </div>
   );
 };

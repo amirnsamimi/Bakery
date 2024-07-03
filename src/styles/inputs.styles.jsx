@@ -13,7 +13,9 @@ const input = styled.input`
 `;
 
 export const SecondaryInput = styled(input)`
-  border: 1px solid ${(props) => props.theme.colors.line};
-  background-color: ${(props) => props.theme.colors.lightGray};
-  color: ${(props) => props.theme.colors.fontColor};
+  border: 1px solid
+    ${(props) => (props.collapse ? "none" : props.theme.colors.line)};
+  background-color: ${(props) =>
+    props.collapse ? "none" : props.theme.colors.lightGray};
+  color: ${(props) => (props.collapse ? "none" : props.theme.colors.fontColor)};
 `;
