@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: IRANYekanFN;
+  src: url("./assets/fonts/IRANYEKANREGULARFANUM.TTF");
+  font-weight: 400;
+}
+@font-face {
+  font-family: IRANYekanFN;
+  src: url("./assets/fonts/IRANYEKANMEDIUMFANUM.TTF");
+  font-weight: 500;
+}
+@font-face {
+  font-family: IRANYekanFN;
+  src: url("./assets/fonts/IRANYEKANLIGHTFANUM.TTF");
+  font-weight: 300;
+}
+@font-face {
+  font-family: IRANYekanFN;
+  src: url("./assets/fonts/IRANYEKANEXTRABOLDFANUM.TTF");
+  font-weight: 800;
+}
+@font-face {
+  font-family: IRANYekanFN;
+  src: url("./assets/fonts/IRANYEKANBLACKFANUM.TTF");
+  font-weight: 900;
+}
+@font-face {
+  font-family: IRANYekanFN;
+  src: url("./assets/fonts/IRANYEKANEXTRABLACKFANUM.TTF");
+  font-weight: 1000;
+}
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap");
+
+body,
+html {
+  font-family: "IRANYekanFN", "Vazirmatn", sans-serif, serif;
+}
