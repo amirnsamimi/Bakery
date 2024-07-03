@@ -1,13 +1,8 @@
 import React from "react";
-
-import Navbar from "./components/navbar/navbar.component";
+import HomeLayout from "./layouts/home";
 
 const Root = () => {
-  return (
-    <div>
-      <Navbar />
-    </div>
-  );
+  return <HomeLayout />;
 };
 
 export default Root;

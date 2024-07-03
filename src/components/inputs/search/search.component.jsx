@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { onChangeHandler } from "../../../hooks/handlers.state";
+import { onChangeHandler } from "../../../hooks/handlers.hook";
 import { SecondaryInput } from "../../../styles/inputs.styles";
 import { DynamicSvg } from "../../../assets/icons/icons";
 

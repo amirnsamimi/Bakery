@@ -16,6 +16,7 @@ export default {
         lightGray: "#fafafa",
         success: "#038c00",
         error: "#D03F00",
+        boxShadow: "#62626233",
       },
     },
   },

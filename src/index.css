@@ -38,3 +38,27 @@ body,
 html {
   font-family: "IRANYekanFN", "Vazirmatn", sans-serif, serif;
 }
+
+/* radio faker */
+
+.radio-secondary input {
+  display: none;
+}
+
+.radio-secondary input:checked ~ .radio-faker {
+  border: var(--primary) solid 3px;
+}
+
+.radio-secondary input:checked ~ .radio-faker::after {
+  content: " ";
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  display: block;
+
+  background-color: #154160;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

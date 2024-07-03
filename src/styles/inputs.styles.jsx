@@ -19,3 +19,20 @@ export const SecondaryInput = styled(input)`
     props.collapse ? "none" : props.theme.colors.lightGray};
   color: ${(props) => (props.collapse ? "none" : props.theme.colors.fontColor)};
 `;
+
+const RadioFaker = styled.span`
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const RadioPrimaryFaker = styled(RadioFaker)`
+  border: ${(props) => props.theme.colors.line} solid 3px;
+`;
+
+export const RadioSecondaryFaker = styled(RadioFaker)`
+  background-color: ${(props) => props.theme.colors.line};
+`;
