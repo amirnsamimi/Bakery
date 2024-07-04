@@ -12,6 +12,9 @@ const HomeLayout = () => {
       <section>
         <WhatsNew />
       </section>
+      <section>
+        <WhatsNew direction="ltr" />
+      </section>
     </div>
   );
 };
