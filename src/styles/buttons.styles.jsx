@@ -29,3 +29,19 @@ export const SubmitButton = styled(SolidButton)`
   box-shadow: 0px 8px 8px 0px ${(props) => props.theme.colors.boxShadow};
   color: ${(props) => props.theme.colors.white};
 `;
+
+const RoundButton = styled.button`
+  width: max-content;
+  border-radius: 100px;
+  padding: 4px;
+  display: flex;
+  height: max-content
+  border: none;
+  cursor: pointer;
+  transition: 500ms background;
+  
+`;
+
+export const RoundPrimaryButton = styled(RoundButton)`
+  background-color: ${(props) => props.theme.colors.primary};
+`;

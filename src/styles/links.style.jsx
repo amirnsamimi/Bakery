@@ -12,13 +12,11 @@ const TransLink = styled(Link)`
   align-items: center;
   height: 23px;
   width: max-content;
-  padding: 5px 15px;
   min-width: 90px;
   border: none;
   cursor: pointer;
   transition: 500ms background;
   @media (min-width: 768px) {
-    padding: 10px 20px;
     line-height: 25px;
     border-radius: 16px;
     font-size: 16px;

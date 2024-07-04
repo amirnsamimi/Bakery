@@ -15,12 +15,12 @@ const Carousel = () => {
         <div
           className={`${
             index === "0" ? "translate-x-0 " : "translate-x-full "
-          } transition-transform duration-500 absolute h-48 w-full px-4  `}
+          } transition-transform duration-500 absolute h-48 w-full px-4`}
         >
           <img
             src={"/assets/images/d5b697a840c6aa6f5a26b67c6f4024e9.jpeg"}
             alt="carousel-image"
-            className="w-full h-full object-cover  rounded-lg "
+            className="w-full h-full object-cover  rounded-lg  shadow-[0_1.17px_1.17px_rgba(0,0,0,0.2)] "
           />
           <div className="absolute top-4 flex flex-col justify-between right-8 bottom-4 z-10 ">
             <div>
@@ -40,10 +40,10 @@ const Carousel = () => {
           <img
             src={"/assets/images/b599bbc73eaa10109e1150ed4ee29a41.jpeg"}
             alt="carousel-image"
-            className="w-full h-full object-cover  rounded-lg "
+            className="w-full h-full object-cover  rounded-lg  shadow-[0_1.17px_1.17px_rgba(0,0,0,0.2)]"
           />{" "}
           <div className="bg-gradient-to-t from-[#4E4E4E] h-full top-0 right-4 left-4 bottom-0 absolute  rounded-lg"></div>
-          <div className="absolute bottom-4 right-8 left-8 z-10 ">
+          <div className="absolute bottom-4 right-8 left-4 z-10 ">
             <div className="flex justify-between w-full ">
               <h2 className=" font-semiBold text-xs text-white">
                 10% تخفیف بگیرید

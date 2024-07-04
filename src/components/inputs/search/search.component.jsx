@@ -4,7 +4,7 @@ import { SecondaryInput } from "../../../styles/inputs.styles";
 import { DynamicSvg } from "../../../assets/icons/icons";
 
 const Search = ({ collapse }) => {
-  const [search, setSearch] = useState({ search: " " });
+  const [search, setSearch] = useState({ search: "" });
   const placeHolderValue = collapse ? " " : "جستجو...";
   return (
     <div className="relative flex justify-end items-center">
