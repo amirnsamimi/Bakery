@@ -13,7 +13,7 @@ const HomeLayout = () => {
         <WhatsNew />
       </section>
       <section>
-        <WhatsNew direction="ltr" />
+        <WhatsNew />
       </section>
     </div>
   );
