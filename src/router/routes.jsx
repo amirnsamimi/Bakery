@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../root";
 import HomeLayout from "../layouts/home";
+import SearchPage from "../components/pages/search/searchPage.component";
 
 const router = createBrowserRouter([
   {
