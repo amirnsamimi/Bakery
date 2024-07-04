@@ -18,9 +18,10 @@ const WhatsNew = ({ direction = "rtl" }) => {
         } `}
       >
         <div
-          className={` ${
-            direction == "rtl" ? "pr-4" : "pl-4"
-          } flex flex-nowrap w-max gap-4`}
+          className={` px-4
+          flex flex-nowrap w-max gap-4 
+           
+           `}
         >
           <MainCart
             src="/assets/images/b599bbc73eaa10109e1150ed4ee29a41.jpeg"
