@@ -39,6 +39,10 @@ html {
   font-family: "IRANYekanFN", "Vazirmatn", sans-serif, serif;
 }
 
+.env-padding {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
 /* radio faker */
 
 .radio-secondary input {

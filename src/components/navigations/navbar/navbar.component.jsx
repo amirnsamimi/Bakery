@@ -7,8 +7,8 @@ const Navbar = () => {
   const [collapse, setCollapse] = useState(true);
 
   return (
-    <div className="w-full h-14 grid grid-cols-12 p-4 items-center content-center bg-white">
-      <div className="col-span-2 flex">
+    <div className=" fixed z-50 w-full h-14 grid grid-cols-12 p-4 landscape:px-12 items-center content-center bg-white">
+      <div className=" col-span-2 flex">
         <DynamicSvg name="menu-linear" color="black" />
       </div>
 
