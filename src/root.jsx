@@ -7,8 +7,10 @@ const Root = () => {
   return (
     <>
       <Navbar />
-      <main>
-        <Outlet />
+      <main className="flex justify-center py-4">
+        <div className="max-w-screen-xl">
+          <Outlet />
+        </div>
       </main>
     </>
   );
