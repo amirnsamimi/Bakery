@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../components/navigations/navbar/navbar.component";
 import Carousel from "../components/visuals/carousel/carousel.component";
-import WhatsNew from "../components/products/whatsnew/whatsNew.component";
+import MainProducts from "../components/products/mainProducts/mainProducts.component";
+import Categories from "../components/products/categories/categories";
 
 const HomeLayout = () => {
   return (
@@ -10,10 +10,13 @@ const HomeLayout = () => {
         <Carousel />
       </section>
       <section>
-        <WhatsNew />
+        <MainProducts title={"تازه ها"} symbol={"tag-outline"} />
       </section>
       <section>
-        <WhatsNew />
+        <Categories />
+      </section>
+      <section>
+        <MainProducts title={"تخفیف ها"} symbol={"discount-outline"} />
       </section>
     </div>
   );

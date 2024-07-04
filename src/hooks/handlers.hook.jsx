@@ -15,8 +15,8 @@ export const countHandler = (name, countValue, setterFunction) => {
   if (name === "plus" || name === "minus") {
     switch (name) {
       case "minus":
-        if (countValue == 1) {
-          setterFunction(1);
+        if (countValue == 0) {
+          setterFunction(0);
         } else {
           setterFunction((prev) => prev - 1);
         }
@@ -25,7 +25,7 @@ export const countHandler = (name, countValue, setterFunction) => {
         setterFunction((prev) => prev + 1);
         break;
       default:
-        setterFunction(1);
+        setterFunction(0);
         break;
     }
   } else {

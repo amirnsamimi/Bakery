@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CounterButton from "../../buttons/counter.component";
 
 const MainCart = ({ src, title, description, unit, offPrice, price }) => {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   return (
     <div className="relative w-36 h-52  md:w-56 md:h-80 transition-[background] duration-300 ease-out group">
       <div className="flex justify-center ">
@@ -21,7 +21,7 @@ const MainCart = ({ src, title, description, unit, offPrice, price }) => {
           <span className=" text-[6px] md:text-[10px]">{description}*</span>
           <div className="flex gap-1 items-baseline">
             <span className="line-through text-[9px] md:text-sm font-extrabold">
-              {offPrice * count}
+              {count > 0 ? offPrice * count : offPrice}
             </span>
             <span className="line-through text-[8px] md:text-xs font-light">
               تومان
@@ -31,7 +31,7 @@ const MainCart = ({ src, title, description, unit, offPrice, price }) => {
         <div className=" md:mt-2 flex gap-2 w-full justify-between">
           <div className="flex gap-1 justify-center items-center">
             <span className=" text-[9px] md:text-sm font-extrabold">
-              {count * price}
+              {count > 0 ? price * count : price}
             </span>
             <span className="text-[8px] md:text-xs font-light">تومان</span>
           </div>
