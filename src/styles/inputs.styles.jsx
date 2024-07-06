@@ -7,6 +7,7 @@ const input = styled.input`
   outline: none;
   font-size: 1rem;
   padding: 15px 20px;
+  display: ${(props) => props.collapse && "none"};
   @media (min-width: 768px) {
     height: 32px;
   }
