@@ -55,7 +55,19 @@ const Navbar = () => {
                   size="24"
                 />
               </div>
+              <div className="relative  flex items-center justify-between bg-primaryShade rounded-full w-[84px]  p-1">
+                <div className="w-6 rounded-full primaryShade bg-white flex justify-center">
+                  4
+                </div>
 
+                <div className="px-2">
+                  <DynamicSvg
+                    name="shopping-cart-bold"
+                    color="white"
+                    size="24"
+                  />
+                </div>
+              </div>
               <DynamicSvg
                 className="flex justify-center items-center text-center"
                 name="profile-twotone"
