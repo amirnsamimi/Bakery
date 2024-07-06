@@ -3,11 +3,14 @@ import { DynamicSvg } from "../../../assets/icons/icons";
 import Search from "../../inputs/search/search.component";
 import { onClickHandler, onChangeHandler } from "../../../hooks/handlers.hook";
 import SearchPage from "../../pages/search/searchPage.component";
+import SideBar from "../sidebar/sidebar.component";
 
 const Navbar = () => {
   const [search, setSearch] = useState({ search: "" });
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [menu, setMenu] = useState(false);
+
   useEffect(() => {
     search.search.length > 0 ? setVisible(true) : setVisible(false);
   }, [search]);
@@ -17,7 +20,9 @@ const Navbar = () => {
       <div className=" fixed z-40 w-full  h-14  bg-white flex justify-center">
         <div className="h-full w-full grid grid-cols-12 p-4 max-w-screen-xl lanscape:px-12 landscape:md:px-4 items-center content-center">
           <div className="md:hidden col-span-2 flex w-6 h-6">
-            <DynamicSvg name="menu-linear" color="black" />
+            <button onClick={() => onClickHandler(true, setMenu)}>
+              <DynamicSvg name="menu-linear" color="black" />
+            </button>
           </div>
           <div className="hidden md:col-span-6 md:block">
             <Search
@@ -108,6 +113,8 @@ const Navbar = () => {
         close={() => onClickHandler(false, setOpen)}
         search={search.search}
       />
+
+      <SideBar open={menu} menuClose={()=>onClickHandler(false, setMenu)} />
     </>
   );
 };
