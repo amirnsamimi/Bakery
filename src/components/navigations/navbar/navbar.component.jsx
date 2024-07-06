@@ -14,7 +14,7 @@ const Navbar = () => {
   console.log(visible);
   return (
     <>
-      <div className=" fixed z-50 w-full  h-14  bg-white flex justify-center">
+      <div className=" fixed z-40 w-full  h-14  bg-white flex justify-center">
         <div className="h-full w-full grid grid-cols-12 p-4 max-w-screen-xl lanscape:px-12 landscape:md:px-4 items-center content-center">
           <div className="md:hidden col-span-2 flex ">
             <DynamicSvg name="menu-linear" color="black" />
@@ -84,6 +84,7 @@ const Navbar = () => {
       >
         هیچ موضوعی
       </div>
+
       <SearchPage
         open={open}
         onChange={(e) => onChangeHandler(e, setSearch)}
