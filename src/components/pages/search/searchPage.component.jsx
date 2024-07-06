@@ -8,13 +8,15 @@ const SearchPage = ({ close, open }) => {
         open ? "translate-x-0 " : "translate-x-full "
       }`}
     >
-      <div className=" w-full   gap-4 right-0 top-0 bg-white z-50 h-[75px] basis-full flex items-center px-4 py-">
-        <div className="grow ">
-          <Search />
-        </div>
-        <div className="grow-0 ">
-          {" "}
-          <button onClick={close}> لغو </button>
+      <div className=" w-full right-0 top-0 bg-white z-50 h-[75px] flex justify-center items-center  px-4 ">
+        <div className="w-max-screen-2xl basis-[1536px] flex items-center gap-4 px-4">
+          <div className="grow ">
+            <Search />
+          </div>
+          <div className="grow-0 ">
+            {" "}
+            <button onClick={close}> لغو </button>
+          </div>
         </div>
       </div>
     </div>

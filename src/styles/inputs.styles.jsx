@@ -8,7 +8,7 @@ const input = styled.input`
   font-size: 1rem;
   padding: 15px 20px;
   @media (min-width: 768px) {
-    height: 48px;
+    height: 32px;
   }
 `;
 
