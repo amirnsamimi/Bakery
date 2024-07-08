@@ -8,7 +8,7 @@ const Root = () => {
   return (
     <>
       <Navbar />
-      <main className="env-padding flex justify-center  py-20">
+      <main className="env-padding flex justify-center  py-20 min-h-[96vh]">
         <div className="max-w-screen-xl">
           <Outlet />
         </div>

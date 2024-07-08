@@ -1,5 +1,5 @@
 import React from "react";
-import { RadioSecondaryFaker } from "../../../styles/inputs.styles";
+import {  RadioFilterFaker, RadioSecondaryFaker } from "../../../styles/inputs.styles";
 
 const RadioSecondary = ({ checked, name, value, handler }) => {
   return (
@@ -12,6 +12,27 @@ const RadioSecondary = ({ checked, name, value, handler }) => {
         type="radio"
       />
       <RadioSecondaryFaker className="radio-faker" />
+    </label>
+  );
+};
+
+
+export const RadioFilter = ({ id,checked, name, value, handler, title }) => {
+  return (
+    <label className="radio-filter">
+    
+      <input
+      id={id}
+        defaultChecked={checked}
+        onClick={handler}
+        name={name}
+        value={value}
+        type="radio"
+      />
+        <span className="text-[10px]   md:text-base">
+     {title}
+     </span>
+      <RadioFilterFaker className="radio-filterfaker" />
     </label>
   );
 };

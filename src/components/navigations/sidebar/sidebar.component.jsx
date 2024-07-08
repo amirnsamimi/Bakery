@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { DynamicSvg } from "../../../assets/icons/icons";
 import { onClickHandler } from "../../../hooks/handlers.hook";
+import { Link } from "react-router-dom";
 
 const SideBar = ({ open,menuClose }) => {
   const [menuDrop, setMenuDrop] = useState(false);
@@ -24,12 +25,12 @@ const SideBar = ({ open,menuClose }) => {
         <div className="pr-2">
           <ul className="flex flex-col gap-5 list-none">
             <li className="flex justify-between">
-              <a className="flex gap-2 items-center" href="#">
+              <Link className="flex gap-2 items-center" to="/">
                 <div className="w-[18px] h-[18px]">
                   <DynamicSvg name="home-twotone" size="16" />
                 </div>
                 <span className="text-xs font-bold leading-4">خانه</span>
-              </a>
+              </Link>
             </li>
             <li className="flex justify-between">
               <div className="flex flex-col">
@@ -59,11 +60,11 @@ const SideBar = ({ open,menuClose }) => {
                         : "opacity-0 delay-700 -top-[3rem] "
                     } transition-all duration-300 `}
                   >
-                    <a href="#">
+                    <Link to="/categories">
                       <span className="text-xs font-normal leading-4">
                         همه محصولات
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className={`flex items-center relative bg-lightGray h-4 gap-4 ${
@@ -72,11 +73,11 @@ const SideBar = ({ open,menuClose }) => {
                         : "opacity-0 delay-[600ms] -top-[5rem] "
                     } transition-all duration-300 `}
                   >
-                    <a href="#">
+                    <Link to="/categories/eveningcake">
                       <span className="text-xs font-normal leading-4">
                         کیک عصرانه
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className={`flex items-center h-4 gap-4 ${
@@ -85,11 +86,11 @@ const SideBar = ({ open,menuClose }) => {
                         : "opacity-0 delay-500 -top-[7rem] "
                     } transition-all duration-300 relative `}
                   >
-                    <a href="#">
+                    <Link to="/categories/birthdaycake">
                       <span className="text-xs font-normal leading-4">
                         کیک تولد
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className={`flex items-center h-4 gap-4   ${
@@ -98,11 +99,11 @@ const SideBar = ({ open,menuClose }) => {
                         : "opacity-0 delay-[400ms] -top-[9rem] "
                     } transition-all duration-300 relative`}
                   >
-                    <a href="#">
+                    <Link to="/categories/cupcake">
                       <span className="text-xs font-normal leading-4">
                         کاپ کیک
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className={`flex items-center h-4 gap-4   ${
@@ -111,11 +112,11 @@ const SideBar = ({ open,menuClose }) => {
                         : "opacity-0 delay-300 -top-[11rem] "
                     } transition-all duration-300 relative `}
                   >
-                    <a href="#">
+                    <Link to="/categories/jarcake">
                       <span className="text-xs font-normal leading-4">
                         جار کیک
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className={`flex items-center h-4 gap-4   ${
@@ -124,11 +125,11 @@ const SideBar = ({ open,menuClose }) => {
                         : "opacity-0 delay-200 -top-[13rem] "
                     } transition-all duration-300 relative `}
                   >
-                    <a href="#">
+                    <Link to="/categories/doughnut">
                       <span className="text-xs font-normal leading-4">
                         دونات
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li
                     className={`flex items-center h-4 gap-4 w-full bg-lightGray  ${
@@ -137,11 +138,11 @@ const SideBar = ({ open,menuClose }) => {
                         : "opacity-0 delay-100 -top-[15rem] "
                     } transition-all duration-300 relative `}
                   >
-                    <a href="#">
+                    <Link to="/categories/misc">
                       <span className="text-xs font-normal leading-4">
                         متفرقه
                       </span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -160,38 +161,38 @@ const SideBar = ({ open,menuClose }) => {
               </div>
             </li>
             <li className="flex justify-between">
-              <a className="flex gap-2 items-center" href="#">
+              <Link className="flex gap-2 items-center" to="#">
                 <div className="w-[18px] h-[18px]">
                   <DynamicSvg name="phone-broken-twotone" size="16" />
                 </div>
                 <span className="text-xs font-bold leading-4">تماس با ما</span>
-              </a>
+              </Link>
             </li>
             <li className="flex justify-between">
-              <a className="flex gap-2 items-center" href="#">
+              <Link className="flex gap-2 items-center" to="#">
                 <div className="w-[18px] h-[18px]">
                   <DynamicSvg name="task-twotone" size="16" />
                 </div>
                 <span className="text-xs font-bold leading-4">
                   تاریخچه خرید
                 </span>
-              </a>
+              </Link>
             </li>
             <li className="flex justify-between">
-              <a className="flex gap-2 items-center" href="#">
+              <Link className="flex gap-2 items-center" to="#">
                 <div className="w-[18px] h-[18px]">
                   <DynamicSvg name="shopping-cart-twotone" size="16" />
                 </div>
                 <span className="text-xs font-bold leading-4">سبد خرید</span>
-              </a>
+              </Link>
             </li>
             <li className="flex justify-between">
-              <a className="flex gap-2 items-center" href="#">
+              <Link className="flex gap-2 items-center" to="#">
                 <div className="w-[18px] h-[18px]">
                   <DynamicSvg name="profile-twotone" size="16" />
                 </div>
                 <span className="text-xs font-bold leading-4">حساب کاربری</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -37,3 +37,25 @@ export const RadioPrimaryFaker = styled(RadioFaker)`
 export const RadioSecondaryFaker = styled(RadioFaker)`
   background-color: ${(props) => props.theme.colors.line};
 `;
+
+
+
+ const FilterRadio = styled.span`
+  width: 10px;
+  height: 10px;
+    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const RadioFilterFaker = styled(FilterRadio)`
+    width: 10px;
+    height:10px;
+  opacity:0;
+  border-right: 10px solid ${(props) => props.theme.colors.lightGray}; 
+  border-left: 10px solid ${(props) => props.theme.colors.lightGray}; 
+  border-bottom: 10px solid ${(props) => props.theme.colors.lightGray}; 
+  border-top: 10px solid ${(props) => props.theme.colors.primary}; 
+`;
+

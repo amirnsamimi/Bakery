@@ -2,7 +2,8 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../root";
 import HomeLayout from "../layouts/home";
-import SearchPage from "../components/pages/search/searchPage.component";
+import Category from "../layouts/Category";
+import Sales from "../layouts/Sales";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,22 @@ const router = createBrowserRouter([
         index: true,
         element: <HomeLayout />,
       },
+      {
+        path:"/categories",
+        element: <Category />,
+        children:[
+          {
+            path:":category",
+            element: <Category  />
+          }
+        ]
+      },
+      {
+        path:"/sales",
+        element: <Sales />
+        
+      },
+      
     ],
   },
 ]);
