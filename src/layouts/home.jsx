@@ -3,9 +3,12 @@ import Carousel from "../components/visuals/carousel/carousel.component";
 import MainProducts from "../components/products/mainProducts/mainProducts.component";
 import Categories from "../components/products/categories/categories";
 
+
 const HomeLayout = () => {
+
+
   return (
-    <div className="grid gap-12">
+    <div className="grid gap-12 py-24">
       <section>
         <Carousel />
       </section>

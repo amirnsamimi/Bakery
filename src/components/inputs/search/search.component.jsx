@@ -6,7 +6,7 @@ import { DynamicSvg } from "../../../assets/icons/icons";
 const Search = ({ collapse, onChange, search }) => {
   const placeHolderValue = collapse ? " " : "جستجو...";
   return (
-    <div className="relative flex justify-end items-center">
+    <div className="relative flex justify-end items-center grow">
       <span
         className={`absolute left-1 top-0 bottom-0 my-auto rounded-full w-6 h-6  md:h-6 md:w-6 flex justify-center items-center ${
           !collapse && "bg-primary p-1.5"
@@ -19,6 +19,7 @@ const Search = ({ collapse, onChange, search }) => {
         />
       </span>
       <SecondaryInput
+     
         collapse={collapse}
         placeholder={placeHolderValue}
         name="search"

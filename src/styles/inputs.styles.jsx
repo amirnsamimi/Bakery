@@ -59,3 +59,23 @@ export const RadioFilterFaker = styled(FilterRadio)`
   border-top: 10px solid ${(props) => props.theme.colors.primary}; 
 `;
 
+
+export const TextNormalInput = styled.input`
+  direction: rtl;
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid ${(props) => props.theme.colors.line};
+`
+
+
+
+export const TextAreaInput = styled.textarea`
+  width: 100%;
+  padding: 10px 12px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid ${(props) => props.theme.colors.line};
+  resize: none;
+  min-height: 150px;
+`

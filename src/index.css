@@ -119,7 +119,11 @@ html {
 }
 
 
-
-.linear-shade{
-  background: radial-gradient(at top right, rgba(167, 182, 193, 0.3) 0%, rgba(116, 144, 164, 0) 30%) 
+@media screen and (max-width: 1350px) {
+  .linear-shade{
+  
+    background: radial-gradient(at top right, rgba(167, 182, 193, 0.3) 0%, rgba(116, 144, 164, 0) 30%) 
+  
+  }
 }
+

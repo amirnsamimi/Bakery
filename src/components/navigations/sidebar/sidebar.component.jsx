@@ -161,11 +161,19 @@ const SideBar = ({ open,menuClose }) => {
               </div>
             </li>
             <li className="flex justify-between">
-              <Link className="flex gap-2 items-center" to="#">
+              <Link className="flex gap-2 items-center" to="/contactus">
                 <div className="w-[18px] h-[18px]">
                   <DynamicSvg name="phone-broken-twotone" size="16" />
                 </div>
                 <span className="text-xs font-bold leading-4">تماس با ما</span>
+              </Link>
+            </li>
+            <li className="flex justify-between">
+              <Link className="flex gap-2 items-center" to="/aboutus">
+                <div className="w-[18px] h-[18px]">
+                  <DynamicSvg name="faq-twotone" size="16" />
+                </div>
+                <span className="text-xs font-bold leading-4">ارتباط با ما</span>
               </Link>
             </li>
             <li className="flex justify-between">

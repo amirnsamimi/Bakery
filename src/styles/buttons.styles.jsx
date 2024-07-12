@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 const SolidButton = styled.button`
-  border-radius: 6px;
+  border-radius: 12px;
   line-height: 15px;
   font-size: 10px;
   font-weight: 500;
@@ -11,7 +11,7 @@ const SolidButton = styled.button`
   height: 23px;
   width: max-content;
   padding: 5px 15px;
-  min-width: 90px;
+  min-width: 45px;
   border: none;
   cursor: pointer;
   transition: 500ms background;

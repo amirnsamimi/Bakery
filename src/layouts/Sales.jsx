@@ -5,15 +5,13 @@ import { DynamicSvg } from '../assets/icons/icons'
 
 const Sales = () => {
   return (
-    <div className='p-4 grid gap-6 font-medium text-sm'>
+    <div className='p-4 grid gap-6 font-medium text-sm py-24'>
            <div className='flex gap-4 pb-4'>
       
       <h1 className='font-medium text-xs md:text-[2rem]'>
         تخفیف ها 
       </h1>
       </div>
-
-      
       <ul className='grid grid-cols-2 sm:grid-cols-3  lg:grid-cols-4 w-full gap-6 justify-center'>
        <li className='col-auto'>
       <MainCart

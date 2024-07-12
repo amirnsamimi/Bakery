@@ -5,6 +5,11 @@ import HomeLayout from "../layouts/home";
 import Category from "../layouts/Category";
 import Sales from "../layouts/Sales";
 import NotFound from "../layouts/notFound";
+import ContactUs from "../layouts/contact";
+import AboutUs from "../layouts/aboutus";
+import Profile from "../layouts/user/profile";
+
+import PrivateRoutes from "./private/privateroutes";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +40,24 @@ const router = createBrowserRouter([
         element: <Sales />
         
       },
+      {
+        path:"/contactus",
+        element: <ContactUs />
+      },
+      {
+        path:"/aboutus",
+        element: <AboutUs />
+      },
+      { path:"/login",
+        element:<PrivateRoutes />,
+        children:[
+          {
+            index:true,
+            element: <Profile />
+          }
+
+        ]
+      }
       
     ],
   },
