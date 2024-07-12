@@ -68,7 +68,10 @@ export const TextNormalInput = styled.input`
   border: 1px solid ${(props) => props.theme.colors.line};
 `
 
+export const TextNormalInputIcon = styled(TextNormalInput)`
+  padding-inline: 48px;
 
+`
 
 export const TextAreaInput = styled.textarea`
   width: 100%;

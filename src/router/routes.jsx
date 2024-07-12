@@ -10,12 +10,12 @@ import AboutUs from "../layouts/aboutus";
 import Profile from "../layouts/user/profile";
 
 import PrivateRoutes from "./private/privateroutes";
+import Login from "../layouts/login";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-
     children: [
       {
         index: true,
@@ -49,6 +49,10 @@ const router = createBrowserRouter([
         element: <AboutUs />
       },
       { path:"/login",
+        element:<Login />,
+      },
+      {
+        path:"/user",
         element:<PrivateRoutes />,
         children:[
           {

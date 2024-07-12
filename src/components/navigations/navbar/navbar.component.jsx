@@ -24,7 +24,7 @@ const Navbar = () => {
   
   return (
     <>
-      <div className=" fixed z-40  w-full md:w-[calc(100%-10%)]  h-14 px-4  bg-white flex  justify-center">
+      <div className=" fixed z-40  w-full md:w-[calc(100%-6.66%)]  h-14 px-4  bg-white flex  justify-center">
         <div className="h-full w-full   flex  gap-32  max-w-screen-xl lanscape:px-12  basis-full landscape:md:px-4 items-center justify-between content-center">
           <div className="md:hidden  flex w-6 h-6">
             <button onClick={() => onClickHandler(true, setMenu)}>
