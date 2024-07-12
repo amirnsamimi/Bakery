@@ -23,7 +23,7 @@ export const RadioFilter = ({ id,checked, name, value, handler, title }) => {
     
       <input
       id={id}
-        defaultChecked={checked}
+        checked={checked}
         onClick={handler}
         name={name}
         value={value}

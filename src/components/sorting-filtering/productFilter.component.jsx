@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { RadioFilter } from "../inputs/radio/radio.component";
+import { Link, useParams } from "react-router-dom";
 
 
-const ProductFilter = ({selectedCategory}) => {
+const ProductFilter = () => {
 
-
+    const { category } = useParams()
 
   return (
-    <div className="flex gap-8 border-b ">
-              <RadioFilter selectedCategory={selectedCategory}  checked={selectedCategory == "" ? true : false }  title="همه محصولات"  name="cakeType" />
-      <RadioFilter checked={selectedCategory == "eveningcake" ? true : false } selectedCategory={selectedCategory} title="کیک عصرانه" name="cakeType" />
-      <RadioFilter  checked={selectedCategory == "birthdaycake" ? true : false } selectedCategory={selectedCategory} title="کیک تولد"  name="cakeType"/>
-      <RadioFilter  checked={selectedCategory == "cupcake" ? true : false } selectedCategory={selectedCategory} title="کاپ کیک"   name="cakeType" />
-      <RadioFilter  checked={selectedCategory == "jarcake" ? true : false }  selectedCategory={selectedCategory}title="جار کیک"   name="cakeType" />
-      <RadioFilter  checked={selectedCategory == "doughnut" ? true : false } selectedCategory={selectedCategory} title="دونات"   name="cakeType"/>
-      <RadioFilter  checked={selectedCategory == "misc" ? true : false } selectedCategory={selectedCategory} title="متفرقه"  name="cakeType"/>
+    <div className="flex gap-8 border-b mb-4 ">
+              <Link to="/categories" className="mb-2"><RadioFilter   checked={category == undefined ? true : false }  title="همه محصولات"  name="cakeType" /></Link>
+              <Link to="/categories/eveningcake"> <RadioFilter checked={category == "eveningcake" ? true : false }  title="کیک عصرانه" name="cakeType" /></Link>
+              <Link to="/categories/birthdaycake"> <RadioFilter  checked={category == "birthdaycake" ? true : false }  title="کیک تولد"  name="cakeType"/></Link>
+              <Link to="/categories/cupcake"> <RadioFilter  checked={category == "cupcake" ? true : false }  title="کاپ کیک"   name="cakeType" /></Link>
+              <Link to="/categories/jarcake"> <RadioFilter  checked={category == "jarcake" ? true : false }  title="جار کیک"   name="cakeType" /></Link>
+              <Link to="/categories/doughnut"> <RadioFilter  checked={category == "doughnut" ? true : false }  title="دونات"   name="cakeType"/></Link>
+              <Link to="/categories/misc"> <RadioFilter  checked={category == "misc" ? true : false }  title="متفرقه"  name="cakeType"/></Link>
     </div>
   );
 };
