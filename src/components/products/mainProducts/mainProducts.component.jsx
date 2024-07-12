@@ -1,16 +1,29 @@
 import React from "react";
 import MainCart from "../mainCart/mainCart.component";
 import { DynamicSvg } from "../../../assets/icons/icons";
+import {  TransPrimaryLinkB } from "../../../styles/links.style";
 
-const MainProducts = ({ direction = "rtl", title, symbol }) => {
+const MainProducts = ({ navigator = false, direction = "rtl", title, symbol }) => {
   return (
     <div
       className={`grid gap-4 overflow-hidden 
       }`}
     >
-      <div className="flex gap-1 px-4">
+      <div className="flex gap-1 px-4 items-center justify-between">
+        <div className="flex gap-1">
         <DynamicSvg name={symbol} color="black" size={16} />{" "}
-        <h2 className="font-medium text-xs"> {title} </h2>
+        <h2 className="font-medium text-xs"> {title} </h2> 
+        </div>
+        <div className={`${navigator == false ? "hidden" : "flex"}`}>
+        <TransPrimaryLinkB to="sales" alt="مشاهده محصول">
+                مشاهده
+                <DynamicSvg
+                  name="circle-filled-arrow-left"
+                  color="black"
+                  size="24"
+                />
+              </TransPrimaryLinkB>
+        </div>
       </div>
       <div
         className={`grid gap-4 w-full overflow-x-scroll overflow-y-hidden ${

@@ -1,19 +1,31 @@
 import React from "react";
-import HomeLayout from "./layouts/home";
+
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/navigations/navbar/navbar.component";
 import Footer from "./components/footer/footer.component";
+import Aside from "./components/navigations/aside/aside.component";
 
 const Root = () => {
   return (
     <>
+   
+    <div className="grid grid-cols-12 ">
+      <div className="col-span-1 hidden md:grid">
+      <Aside />
+      </div>
+      <div className="col-span-12 md:col-span-11">
       <Navbar />
-      <main className="env-padding flex justify-center  py-20 min-h-[96vh]">
-        <div className="max-w-screen-xl">
+      <main className="env-padding flex justify-center   py-20 min-h-[96vh]">
+        <div className="max-w-screen-xl  w-full">
           <Outlet />
         </div>
       </main>
+      <div >
       <Footer />
+      </div>
+      </div>
+   
+      </div>
     </>
   );
 };

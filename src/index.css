@@ -34,7 +34,7 @@
 }
 @import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap");
 
-:root{
+:root {
   --primary: #154160;
 }
 
@@ -66,33 +66,31 @@ html {
   background-color: var(--primary);
 }
 
-.radio-filter{
+.radio-filter {
   position: relative;
   padding: 16px 0;
 }
 
 .radio-filter input {
   display: none;
-
 }
 
 .radio-filter input ~ .radio-filterfaker {
   transition: 1s opacity;
   opacity: 0;
   position: absolute;
-  bottom:-32px;
+  bottom: -24px;
   width: 32px;
   height: 32px;
   display: block;
-  border-right: 18px solid transparent; 
-  border-left: 18px solid transparent; 
-  border-bottom: 18px solid transparent; 
-  border-top: 10px solid  var(--primary); 
-  
+  border-right: 18px solid transparent;
+  border-left: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-top: 10px solid var(--primary);
 }
 
 .radio-filter span {
- color: #bfd6e7;
+  color: #bfd6e7;
 }
 
 .radio-filter input:checked ~ span {
@@ -105,20 +103,23 @@ html {
 .radio-filter input:checked ~ .radio-filterfaker {
   content: " ";
   position: absolute;
-  bottom:-22px;
+  bottom: -22px;
   width: 32px;
   height: 32px;
   display: block;
-  border-right: 18px solid transparent; 
-  border-left: 18px solid transparent; 
-  border-bottom: 18px solid transparent; 
-  border-top: 10px solid  var(--primary); 
+  border-right: 18px solid transparent;
+  border-left: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-top: 10px solid var(--primary);
   opacity: 1;
+}
 
+::-webkit-scrollbar {
+  display: none;
 }
 
 
 
-::-webkit-scrollbar {
-  display: none;
+.linear-shade{
+  background: radial-gradient(at top right, rgba(167, 182, 193, 0.3) 0%, rgba(116, 144, 164, 0) 30%) 
 }

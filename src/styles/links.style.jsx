@@ -27,3 +27,6 @@ const TransLink = styled(Link)`
 export const TransPrimaryLink = styled(TransLink)`
   color: ${(props) => props.theme.colors.white};
 `;
+export const TransPrimaryLinkB = styled(TransLink)`
+  color: ${(props) => props.theme.colors.fontColor};
+`;

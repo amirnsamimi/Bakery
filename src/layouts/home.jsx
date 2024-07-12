@@ -10,13 +10,13 @@ const HomeLayout = () => {
         <Carousel />
       </section>
       <section>
-        <MainProducts title={"تازه ها"} symbol={"tag-outline"} />
+        <MainProducts   title={"تازه ها"} symbol={"tag-outline"} />
       </section>
       <section>
         <Categories />
       </section>
       <section>
-        <MainProducts title={"تخفیف ها"} symbol={"discount-outline"} />
+        <MainProducts navigator={"sales"} title={"تخفیف ها"} symbol={"discount-outline"} />
       </section>
     </div>
   );
