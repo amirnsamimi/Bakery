@@ -1,46 +1,51 @@
-import React, {  useEffect, useState } from "react";
-import {  TextNormalInputIcon } from "../styles/inputs.styles";
-import {  Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { TextNormalInputIcon } from "../styles/inputs.styles";
+import { Link } from "react-router-dom";
 import { DynamicSvg } from "../assets/icons/icons";
 import { SubmitButton } from "../styles/buttons.styles";
-import { emailSanitizer, emailValidator, passwordValidator } from "../hooks/validators.hook";
+import {
+  emailSanitizer,
+  emailValidator,
+  passwordValidator,
+} from "../hooks/validators.hook";
 import { onChangeHandler } from "../hooks/handlers.hook";
 import { useDispatch, useSelector } from "react-redux";
 import { isAuth, login } from "../redux/slices/auth.slice";
 
 const Login = () => {
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [error, setError] = useState({ email: false, password: false });
+  const dispatch = useDispatch();
 
-    const [form,setForm] = useState({email:"",password:""});
-    const [error,setError] = useState({email:null,password:null});
-    const dispatch = useDispatch()
+  const emailhandler = (e) => {
+    const sanitized = emailSanitizer(e.target.value);
+    setForm({ ...form, email: sanitized });
+    setError({ password:false, email: false });
+  };
 
-    const emailhandler = (e) => {
+  const passwordHandler = (e) => {
+    setForm({ ...form, password: e.target.value });
+    setError({ email:false, password: false });
+  };
 
-       const sanitized = emailSanitizer(e.target.value) 
-        setForm({...form, email: sanitized})  
-        setError({...error, email:false})
-       
-     }
-
-     const passwordHandler = (e) => {
-              setForm({...form, password:e.target.value})
-     }
-
-
-
-    const loginLocally = () => {
-      const passwordValidated = passwordValidator(form.password) 
-      const emailValidated = emailValidator(form.email)
-      console.log(passwordValidated,emailValidated)
-
-      // if(Object.values(error).every((value) => value === false)){
-      //   dispatch(login(form))
-      // }else{
-      //   console.log("nothing")
-      // }
+  const loginLocally = () => {
+    const passwordValidated = passwordValidator(form.password);
+    const emailValidated = emailValidator(form.email);
+    console.log(passwordValidated,emailValidated)
+    if (!emailValidated.isValid) {
+      setError({...error, email: true });
+    } else if(!passwordValidated.isValid){
+      setError({...error,password: true})
     }
-    
-    
+
+    console.log(error)
+
+    // if(Object.values(error).every((value) => value === false)){
+    //   dispatch(login(form))
+    // }else{
+    //   console.log("nothing")
+    // }
+  };
 
   return (
     <div className="flex justify-center">
@@ -60,7 +65,7 @@ const Login = () => {
             سلام؛ لطفا موارد زیر را جهت ورود به حساب کاربری تکمیل کنید
           </p>
         </div>
-        <div  className="w-full flex flex-col">
+        <div className="w-full flex flex-col">
           <div className="relative w-full my-4 ">
             <TextNormalInputIcon
               className={" w-full h-full"}
@@ -74,11 +79,17 @@ const Login = () => {
               <DynamicSvg
                 className="right-img absolute top-3  right-3"
                 name="mail-outline"
-                color={`${ true ? "lightGray" : "black"}`}
+                color={`${true ? "lightGray" : "black"}`}
               />
             </div>
           </div>
-         <span className={` ${error.email ? "block" : "hidden"} text-error text-xs pb-4`}>لطفا ایمیل معتبر وارد کنید.</span> 
+          <span
+            className={` ${
+              error.email ? "block" : "hidden"
+            } text-error text-xs pb-4`}
+          >
+            لطفا ایمیل معتبر وارد کنید.
+          </span>
           <div className="relative w-full">
             <TextNormalInputIcon
               className={"w-full"}
@@ -100,7 +111,9 @@ const Login = () => {
             />
           </div>
 
-          {/* <span class="wrong-password">رمزعبور اشتباه است.</span> */}
+          <span  className={` ${
+              error.password ? "block" : "hidden"
+            } text-error text-xs pt-4`}>رمزعبور اشتباه است.</span> 
           <a href="#" className="w-full text-center text-primary  text-xs py-4">
             رمز عبور خود را فراموش کرده اید؟
           </a>
