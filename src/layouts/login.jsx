@@ -8,15 +8,15 @@ import {
   emailValidator,
   passwordValidator,
 } from "../hooks/validators.hook";
-import { onChangeHandler } from "../hooks/handlers.hook";
-import { useDispatch, useSelector } from "react-redux";
-import { isAuth, login } from "../redux/slices/auth.slice";
+
+import { useDispatch } from "react-redux";
+import { login } from "../redux/slices/auth.slice";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState({ email: false, password: false });
   const dispatch = useDispatch();
-
+  
   const emailhandler = (e) => {
     const sanitized = emailSanitizer(e.target.value);
     setForm({ ...form, email: sanitized });
@@ -31,20 +31,15 @@ const Login = () => {
   const loginLocally = () => {
     const passwordValidated = passwordValidator(form.password);
     const emailValidated = emailValidator(form.email);
-    console.log(passwordValidated,emailValidated)
+  
     if (!emailValidated.isValid) {
       setError({...error, email: true });
     } else if(!passwordValidated.isValid){
       setError({...error,password: true})
     }
-
-    console.log(error)
-
-    // if(Object.values(error).every((value) => value === false)){
-    //   dispatch(login(form))
-    // }else{
-    //   console.log("nothing")
-    // }
+    if(Object.values(error).every((value) => value === false)){
+      dispatch(login(form))
+     }
   };
 
   return (

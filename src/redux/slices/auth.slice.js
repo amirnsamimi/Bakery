@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Cookie from "../../hooks/cookie.hook";
 
 
 
@@ -7,14 +8,18 @@ const AuthenticationSlice = createSlice({
     initialState: false,
     reducers:{
         login: (state,action) => {
-            console.log(action.payload)
-            if(action.payload == {email:"amirnsamimi@gmail.com",password:"123456"}){
+            if(action.payload.email == "amirnsamimi@gmail.com" && action.payload.password == "Amir123456@"){
+                
                 state = true
-              
+                const cookie = new Cookie("isLoggedIn",state)
+                cookie.setCookie(2)
             }
+            const cookie = new Cookie("isLoggedIn",state)
+            return state
         },
         logout: (state,action) => {
             state = false
+            return state
         }
     }
 })

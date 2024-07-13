@@ -8,6 +8,7 @@ import { SubmitButton } from "../../../styles/buttons.styles";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { isAuth } from "../../../redux/slices/auth.slice";
+import Cookie from "../../../hooks/cookie.hook";
 
 const Navbar = () => {
   const [search, setSearch] = useState({ search: "" });
@@ -15,8 +16,7 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const [menu, setMenu] = useState(false);
 
-  const auth = useSelector(isAuth);
-
+  const cookie = new Cookie()
 
   useEffect(() => {
     search.search.length > 0 ? setVisible(true) : setVisible(false);
