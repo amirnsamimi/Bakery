@@ -3,49 +3,41 @@ import {  TextNormalInputIcon } from "../styles/inputs.styles";
 import {  Link } from "react-router-dom";
 import { DynamicSvg } from "../assets/icons/icons";
 import { SubmitButton } from "../styles/buttons.styles";
-import { emailSanitizer, emailValidator, passwordSanitizer } from "../hooks/validators.hook";
+import { emailSanitizer, emailValidator, passwordValidator } from "../hooks/validators.hook";
 import { onChangeHandler } from "../hooks/handlers.hook";
 import { useDispatch, useSelector } from "react-redux";
 import { isAuth, login } from "../redux/slices/auth.slice";
 
 const Login = () => {
 
-    const [form,setForm] = useState({email:" ",password:" "});
-    const [error,setError] = useState({email:false,password:false});
+    const [form,setForm] = useState({email:"",password:""});
+    const [error,setError] = useState({email:null,password:null});
     const dispatch = useDispatch()
 
     const emailhandler = (e) => {
 
-       let sanitized = "";
-       const validated = emailValidator(e.target.value)
-        setForm({...form, email: validated.data})   
-
-        console.log(validated.status)
-        if(validated.status){
-             sanitized = emailSanitizer(validated.data) 
-             setForm({...form, email:sanitized})
-             setError({...error, email:true})
-        } else {
-            setError({...error, email:false})
-        }
+       const sanitized = emailSanitizer(e.target.value) 
+        setForm({...form, email: sanitized})  
+        setError({...error, email:false})
+       
      }
 
-     const passwordHandler = (event) => {
-      // console.log(event.target.value)
-      //         sanitized = passwordSanitizer() 
-      //         if( sanitized )
-      //         setForm({...form, password:sanitized})
-      //         setError({...error, password:false})
+     const passwordHandler = (e) => {
+              setForm({...form, password:e.target.value})
      }
 
 
 
     const loginLocally = () => {
-      if(Object.values(error).every((value) => value === false)){
-        dispatch(login(form))
-      }else{
-        console.log("nothing")
-      }
+      const passwordValidated = passwordValidator(form.password) 
+      const emailValidated = emailValidator(form.email)
+      console.log(passwordValidated,emailValidated)
+
+      // if(Object.values(error).every((value) => value === false)){
+      //   dispatch(login(form))
+      // }else{
+      //   console.log("nothing")
+      // }
     }
     
     
@@ -68,7 +60,7 @@ const Login = () => {
             سلام؛ لطفا موارد زیر را جهت ورود به حساب کاربری تکمیل کنید
           </p>
         </div>
-        <div action="" className="w-full flex flex-col">
+        <div  className="w-full flex flex-col">
           <div className="relative w-full my-4 ">
             <TextNormalInputIcon
               className={" w-full h-full"}

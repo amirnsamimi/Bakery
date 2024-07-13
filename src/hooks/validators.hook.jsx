@@ -1,19 +1,19 @@
 export const emailValidator = (email) => {
 const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-return {status: pattern.test(String(email).toLowerCase()), data: String(email).toLowerCase()};
+return {isValid: pattern.test(String(email).toLowerCase()), data: String(email).toLowerCase()};
 }
 
 export const emailSanitizer = (email) => {
-const sanitizedEmail = email.replace(/[<>]g/,"");
+const sanitizedEmail = email.replace(/[<>]/,"");
 return sanitizedEmail
 
 }
 
 
-export const passwordSanitizer = (password = "") => {
+export const passwordValidator = (password = "") => {
 
     const errorHanlder = [];
-    const isValid =  errorHanlder.length > 0 ? false : true
+
     const errors = {
         minL: `رمز عبور میبایست 8 کارکتر یا بیشتر باشد`,
         maxL: `رمز عبور میبایست کمتر از 128 کارکتر باشد`,
@@ -52,5 +52,5 @@ export const passwordSanitizer = (password = "") => {
         errorHanlder.push(errors.special)
     }
 
-    return { isValid: isValid ,data:errorHanlder}
+    return { isValid: errorHanlder.length > 0 ? false : true ,data:errorHanlder}
 }
