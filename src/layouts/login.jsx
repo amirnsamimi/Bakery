@@ -3,47 +3,52 @@ import {  TextNormalInputIcon } from "../styles/inputs.styles";
 import {  Link } from "react-router-dom";
 import { DynamicSvg } from "../assets/icons/icons";
 import { SubmitButton } from "../styles/buttons.styles";
-import { emailSanitizer, emailValidator } from "../hooks/validators.hook";
+import { emailSanitizer, emailValidator, passwordSanitizer } from "../hooks/validators.hook";
 import { onChangeHandler } from "../hooks/handlers.hook";
+import { useDispatch, useSelector } from "react-redux";
+import { isAuth, login } from "../redux/slices/auth.slice";
 
 const Login = () => {
 
-    const [form,setForm] = useState({email:"",password:""});
+    const [form,setForm] = useState({email:" ",password:" "});
     const [error,setError] = useState({email:false,password:false});
+    const dispatch = useDispatch()
 
+    const emailhandler = (e) => {
 
-    const emailhandler = (event) => {
-        let sanitized = "";
-       const validated = emailValidator(event)
+       let sanitized = "";
+       const validated = emailValidator(e.target.value)
+        setForm({...form, email: validated.data})   
+
+        console.log(validated.status)
         if(validated.status){
              sanitized = emailSanitizer(validated.data) 
-             setForm({email:sanitized})
-             setError({email:false})
+             setForm({...form, email:sanitized})
+             setError({...error, email:true})
         } else {
-            setError({email:true})
+            setError({...error, email:false})
         }
      }
 
      const passwordHandler = (event) => {
-        let sanitized = "";
-        const validated = emailValidator(event)
-         if(validated.status){
-              sanitized = emailSanitizer(validated.data) 
-              setForm({password:sanitized})
-              setError({password:false})
-         } else {
-             setError({password:true})
-         }
+      // console.log(event.target.value)
+      //         sanitized = passwordSanitizer() 
+      //         if( sanitized )
+      //         setForm({...form, password:sanitized})
+      //         setError({...error, password:false})
      }
 
-    useEffect(()=>{
-        emailhandler(form.email);
-        passwordHandler(form.password)
-    },[form.email,form.password])
-   
 
+
+    const loginLocally = () => {
+      if(Object.values(error).every((value) => value === false)){
+        dispatch(login(form))
+      }else{
+        console.log("nothing")
+      }
+    }
     
- 
+    
 
   return (
     <div className="flex justify-center">
@@ -70,7 +75,7 @@ const Login = () => {
               type="email"
               name="email"
               value={form.email}
-              onChange={(e)=>onChangeHandler(e,setForm,form)}
+              onChange={emailhandler}
               placeholder="ایمیل"
             />
             <div className="right-img">
@@ -87,6 +92,8 @@ const Login = () => {
               className={"w-full"}
               type="password"
               name="password"
+              value={form.password}
+              onChange={passwordHandler}
               placeholder="رمز عبور"
             />
             <DynamicSvg
@@ -107,7 +114,7 @@ const Login = () => {
           </a>
         </div>
         <div class="flex justify-center flex-col items-center">
-          <SubmitButton >ورود</SubmitButton>
+          <SubmitButton onClick={loginLocally}>ورود</SubmitButton>
           <p className="text-fontColor text-xs leading-3 pt-4">
             حساب کاربری ندارید؟{" "}
             <Link href="#" className="text-primary border-primary border-b">

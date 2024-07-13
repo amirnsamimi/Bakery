@@ -4,9 +4,10 @@ import Search from "../../inputs/search/search.component";
 import { onClickHandler, onChangeHandler } from "../../../hooks/handlers.hook";
 import SearchPage from "../../pages/search/searchPage.component";
 import SideBar from "../sidebar/sidebar.component";
-import { useAuth } from "../../../context/authContext";
 import { SubmitButton } from "../../../styles/buttons.styles";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { isAuth } from "../../../redux/slices/auth.slice";
 
 const Navbar = () => {
   const [search, setSearch] = useState({ search: "" });
@@ -14,7 +15,7 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const [menu, setMenu] = useState(false);
 
-  const {isAuth} = useAuth();
+  const auth = useSelector(isAuth);
 
 
   useEffect(() => {
@@ -91,7 +92,7 @@ const Navbar = () => {
               </div>
               <div className="h-6  md:h-12  rounded-full  bg-lightGray flex items-center justify-center  ">
                
-                {isAuth ? <>    <DynamicSvg
+                {auth ? <>    <DynamicSvg
                   className="md:hidden"
                   name="profile-twotone"
                   size="12"
