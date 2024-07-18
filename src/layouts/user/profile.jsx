@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { DynamicSvg } from '../../assets/icons/icons'
 import { Form } from 'react-router-dom'
 import { BlueButton, SubmitButton } from '../../styles/buttons.styles'
+import { TextAreaInput, TextNormalInput } from '../../styles/inputs.styles'
 
 
 const Profile = () => {
@@ -29,10 +30,11 @@ const Profile = () => {
               
         </div>
         <div>
-          <Form>
-
-
-
+          <Form className='grid max-w-[300px] gap-4'>
+        <TextNormalInput value={"امیر"} />
+        <TextNormalInput  value={"صمیمی"} />
+        <TextNormalInput placeholder='کدپستی' />
+        <TextAreaInput placeholder='آدرس'/>
           <div className='flex gap-4'>
           <BlueButton  style={{width:"165px", height:"45px"}} type="reset" > انصراف</BlueButton>   <SubmitButton  style={{width:"165px", height:"45px"}}  type="submit"> ذخیره تغییرات </SubmitButton>
           </div>
