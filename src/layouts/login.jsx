@@ -50,7 +50,7 @@ const Login = () => {
   else{
   return (
     <div className="flex justify-center">
-      <div className="min-w-[310px] max-w-[550px] bg-white p-8 rounded-xl my-24 border-line border flex justify-center flex-col items-center ">
+      <div className="min-w-[310px] max-w-[360px] bg-white p-8 rounded-xl my-24 border-line border flex justify-center flex-col items-center ">
         <div className="mb-2">
           <div className="w-full flex justify-center">
             <img

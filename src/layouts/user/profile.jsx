@@ -20,19 +20,20 @@ const Profile = () => {
 
                <div className='flex mt-8 gap-8'>
                 <div>
-             <button> <DynamicSvg name='profile-btn' size="142"  /></button>
+             <button> <DynamicSvg name='profile-btn' className='w-[88px] h-[88px] md:w-[148px] md:h-[148px]' size="148"   /></button>
               </div>
-              <div className='flex flex-col justify-center gap-4'>
+              <div className='flex flex-col justify-center gap-4 mb-8'>
                 <h2 className='font-medium'>امیر صمیمی</h2>
-                <span  className=' font-medium flex items-center gap-4'><button><DynamicSvg name="edit-outline" size="16"  color='black' /></button><h3>09124971667</h3></span>
-                <div className='flex w-full gap-8 text-line' > <span>{`کل سفارشات ثبت شده: ${ordersPlaced}`}</span><span>{`سفارشات تحویل گرفته: ${ordersDevlivered}`}</span><span>{`سفارشات درحال آماده سازی: ${pendingOrders}`}</span> </div>
+                <span  className='hidden font-medium md:flex items-center gap-4'><button><DynamicSvg name="edit-outline" size="16"  color='black' /></button><h3>09124971667</h3></span>
+                <div className='flex flex-col w-full gap-1 md:gap-8 text-line' > <span>{`کل سفارشات ثبت شده: ${ordersPlaced}`}</span><span>{`سفارشات تحویل گرفته: ${ordersDevlivered}`}</span><span>{`سفارشات درحال آماده سازی: ${pendingOrders}`}</span> </div>
               </div>
               
         </div>
         <div>
-          <Form className='grid max-w-[300px] gap-4'>
-        <TextNormalInput value={"امیر"} />
-        <TextNormalInput  value={"صمیمی"} />
+          <Form className='grid max-w-[200px] w-full gap-4'>
+        <TextNormalInput readOnly value={"امیر"} />
+        <TextNormalInput readOnly  value={"صمیمی"} />
+        <TextNormalInput className='md:hidden' readOnly  value={"09124971667"} />
         <TextNormalInput placeholder='کدپستی' />
         <TextAreaInput placeholder='آدرس'/>
           <div className='flex gap-4'>

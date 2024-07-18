@@ -9,17 +9,16 @@ const AuthenticationSlice = createSlice({
     reducers:{
         login: (state,action) => {
             if(action.payload.email == "amirnsamimi@gmail.com" && action.payload.password == "Amir123456@"){
-                console.log(state)
+                state = "textString"
                 const cookie = new Cookie("isLoggedIn",state)
                 cookie.setCookie(2)
-                state = true
+            
             }
         
             return state
         },
         logout: (state,action) => {
-            state = false
-            return state
+        //   remove cookie
         },
         loginState: () => {
             const cookie = new Cookie();
