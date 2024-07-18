@@ -11,7 +11,7 @@ const CounterButton = ({ customStyle, count, setCount, size = 24 }) => {
           className={customStyle}
           onClick={(e) => countHandler("minus", count, setCount)}
         >
-          <DynamicSvg name="minus-outline" size={size} color="white" />
+          <DynamicSvg name="minus-outline" size={size}  className="w-4 h-4 md:w-8 md:h-8" color="white" />
         </RoundPrimaryButton>
         <div className="text-[10px] md:text-base">{count}</div>
         <RoundPrimaryButton
@@ -19,7 +19,7 @@ const CounterButton = ({ customStyle, count, setCount, size = 24 }) => {
           className={customStyle}
           onClick={(e) => countHandler("plus", count, setCount)}
         >
-          <DynamicSvg size={size} name="plus-outline" color="white" />
+          <DynamicSvg className="w-4 h-4 md:w-8 md:h-8" size={size} name="plus-outline" color="white" />
         </RoundPrimaryButton>
       </div>
     );
@@ -31,7 +31,7 @@ const CounterButton = ({ customStyle, count, setCount, size = 24 }) => {
           className={customStyle}
           onClick={(e) => countHandler("plus", count, setCount)}
         >
-          <DynamicSvg size={size} name="plus-outline" color="white" />
+          <DynamicSvg size={size} className="w-4 h-4 md:w-8 md:h-8" name="plus-outline" color="white" />
         </RoundPrimaryButton>
       </div>
     );

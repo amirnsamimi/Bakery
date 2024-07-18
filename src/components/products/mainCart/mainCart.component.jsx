@@ -4,7 +4,7 @@ import CounterButton from "../../buttons/counter.component";
 const MainCart = ({ src, title, description, unit, offPrice, price }) => {
   const [count, setCount] = useState(0);
   return (
-    <div className="relative w-36 h-52  md:w-56 md:h-80 transition-[background] duration-300 ease-out group">
+    <div className="relative w-36 h-52  md:w-56 md:h-96 transition-[background] duration-300 ease-out group">
       <div className="flex justify-center ">
         <img
           src={src}
@@ -36,7 +36,8 @@ const MainCart = ({ src, title, description, unit, offPrice, price }) => {
             <span className="text-[8px] md:text-xs font-light">تومان</span>
           </div>
           <CounterButton
-            size="10"
+         
+            size="32"
             count={count}
             setCount={setCount}
             customStyle="group-hover:bg-blueButton"
