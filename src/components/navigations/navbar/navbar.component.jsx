@@ -94,7 +94,7 @@ const Navbar = () => {
                 {auth ?  <Link to="/user"><DynamicSvg
                   className="md:hidden"
                   name="profile-twotone"
-                  size="12"
+                  size="16"
                 />
 
                 <DynamicSvg
