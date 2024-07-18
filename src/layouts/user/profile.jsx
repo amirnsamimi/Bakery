@@ -1,20 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { DynamicSvg } from '../../assets/icons/icons'
+import { Form } from 'react-router-dom'
+import { BlueButton, SubmitButton } from '../../styles/buttons.styles'
 
 
 const Profile = () => {
-    
-
+    const [orders,setOrders] = useState({ordersPlaced: 12, ordersDevlivered: 11, pendingOrders: 1})
+    const {ordersPlaced,ordersDevlivered,pendingOrders} = orders
 
 
   return (
-    <div className='linear-shade  grid grid-cols-12 h-full '>
-        <div className='col-span-12 md:col-span-6  grid items-start content-start p-8 gap-4 pt-32'>
-               <h1 className='font-bold text-[2rem]'>ارتباط با ما </h1>
-               <p >لطفا شکایات، نظرات و درخواست های خود را در رابطه با خدمات ما اینجا بنویسید.</p>
+    <div className='linear-shade w-full h-full '>
+        <div className='w-full  p-8 pt-32'>
+             
+             <div>  <h1 className='font-bold text-[2rem]'>حساب کاربری </h1>
+               <p className='text-line' >شما میتوانید اطلاعات حساب کاربری خود را ویرایش کنید.</p>
+               </div>
+
+               <div className='flex mt-8 gap-8'>
+                <div>
+             <button> <DynamicSvg name='profile-btn' size="142"  /></button>
+              </div>
+              <div className='flex flex-col justify-center gap-4'>
+                <h2 className='font-medium'>امیر صمیمی</h2>
+                <span  className=' font-medium flex items-center gap-4'><button><DynamicSvg name="edit-outline" size="16"  color='black' /></button><h3>09124971667</h3></span>
+                <div className='flex w-full gap-8 text-line' > <span>{`کل سفارشات ثبت شده: ${ordersPlaced}`}</span><span>{`سفارشات تحویل گرفته: ${ordersDevlivered}`}</span><span>{`سفارشات درحال آماده سازی: ${pendingOrders}`}</span> </div>
+              </div>
+              
         </div>
-        <div className='hidden md:col-span-6 md:flex  '>
-                <img src="/assets/images/7dcc7c31b0df0e4dcf463b38ac5f0864.jpeg" className='object-cover w-full h-full' alt="" />
+        <div>
+          <Form>
+
+
+
+          <div className='flex gap-4'>
+          <BlueButton  style={{width:"165px", height:"45px"}} type="reset" > انصراف</BlueButton>   <SubmitButton  style={{width:"165px", height:"45px"}}  type="submit"> ذخیره تغییرات </SubmitButton>
+          </div>
+          </Form>
         </div>
+        </div>
+     
     </div>
   )
 }

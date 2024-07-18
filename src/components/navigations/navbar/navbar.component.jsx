@@ -7,22 +7,21 @@ import SideBar from "../sidebar/sidebar.component";
 import { SubmitButton } from "../../../styles/buttons.styles";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 import { isAuth } from "../../../redux/slices/auth.slice";
-import Cookie from "../../../hooks/cookie.hook";
 
 const Navbar = () => {
   const [search, setSearch] = useState({ search: "" });
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const [menu, setMenu] = useState(false);
+  const auth = useSelector(isAuth)
 
-  const cookie = new Cookie()
 
   useEffect(() => {
     search.search.length > 0 ? setVisible(true) : setVisible(false);
   }, [search]);
 
-  
   return (
     <>
       <div className=" fixed z-40  w-full md:w-[calc(100%-6.66%)]  h-14 px-4  bg-white flex  justify-center">
@@ -92,7 +91,7 @@ const Navbar = () => {
               </div>
               <div className="h-6  md:h-12  rounded-full  bg-lightGray flex items-center justify-center  ">
                
-                {auth ? <>    <DynamicSvg
+                {auth ?  <Link to="/user"><DynamicSvg
                   className="md:hidden"
                   name="profile-twotone"
                   size="12"
@@ -102,7 +101,7 @@ const Navbar = () => {
                   className="hidden md:flex"
                   name="profile-twotone"
                   size="24"
-                /> </> : <Link to="/login" ><SubmitButton>ورود</SubmitButton></Link>}
+                /></Link> : <Link to="/login" ><SubmitButton>ورود</SubmitButton></Link>}
 
             
               </div>
@@ -128,7 +127,9 @@ const Navbar = () => {
 
       <SideBar open={menu} menuClose={()=>onClickHandler(false, setMenu)} />
     </>
+    
   );
+
 };
 
 export default Navbar;

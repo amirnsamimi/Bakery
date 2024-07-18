@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TextNormalInputIcon } from "../styles/inputs.styles";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { DynamicSvg } from "../assets/icons/icons";
 import { SubmitButton } from "../styles/buttons.styles";
 import {
@@ -9,14 +9,16 @@ import {
   passwordValidator,
 } from "../hooks/validators.hook";
 
-import { useDispatch } from "react-redux";
-import { login } from "../redux/slices/auth.slice";
+import { useDispatch, useSelector } from "react-redux";
+import { isAuth, login   } from "../redux/slices/auth.slice";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState({ email: false, password: false });
+  const [visible,setVisible] = useState(false)
   const dispatch = useDispatch();
-  
+  const navigate = useNavigate()
+  const auth = useSelector(isAuth)
   const emailhandler = (e) => {
     const sanitized = emailSanitizer(e.target.value);
     setForm({ ...form, email: sanitized });
@@ -42,6 +44,10 @@ const Login = () => {
      }
   };
 
+  if( auth ) {
+   return <Navigate to={"/user"} />
+  }
+  else{
   return (
     <div className="flex justify-center">
       <div className="min-w-[310px] max-w-[550px] bg-white p-8 rounded-xl my-24 border-line border flex justify-center flex-col items-center ">
@@ -88,7 +94,7 @@ const Login = () => {
           <div className="relative w-full">
             <TextNormalInputIcon
               className={"w-full"}
-              type="password"
+              type={ visible ? "text" : "password"}
               name="password"
               value={form.password}
               onChange={passwordHandler}
@@ -99,11 +105,13 @@ const Login = () => {
               name="key-outline"
               color="lightGray"
             />
+            <button onClick={()=>setVisible(!visible)}>
             <DynamicSvg
               className="absolute top-3  left-3"
-              name="eye-outline"
+              name={visible ? "eye-outline-slash"  : "eye-outline"}
               color="lightGray"
             />
+            </button>
           </div>
 
           <span  className={` ${
@@ -113,8 +121,8 @@ const Login = () => {
             رمز عبور خود را فراموش کرده اید؟
           </a>
         </div>
-        <div class="flex justify-center flex-col items-center">
-          <SubmitButton onClick={loginLocally}>ورود</SubmitButton>
+        <div className="flex justify-center flex-col items-center">
+          <SubmitButton style={{width:"165px", height:"45px"}} onClick={loginLocally}>ورود</SubmitButton>
           <p className="text-fontColor text-xs leading-3 pt-4">
             حساب کاربری ندارید؟{" "}
             <Link href="#" className="text-primary border-primary border-b">
@@ -125,6 +133,7 @@ const Login = () => {
       </div>
     </div>
   );
+}
 };
 
 export default Login;

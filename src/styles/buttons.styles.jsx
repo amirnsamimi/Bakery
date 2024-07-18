@@ -30,6 +30,12 @@ export const SubmitButton = styled(SolidButton)`
   color: ${(props) => props.theme.colors.white};
 `;
 
+export const BlueButton = styled(SolidButton)`
+  background-color: ${(props) => props.theme.colors.blueButton};
+  box-shadow: 0px 8px 8px 0px ${(props) => props.theme.colors.boxShadow};
+  color: ${(props) => props.theme.colors.primary};
+`;
+
 const RoundButton = styled.button`
   width: max-content;
   border-radius: 100px;

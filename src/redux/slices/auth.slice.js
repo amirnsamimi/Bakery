@@ -9,21 +9,26 @@ const AuthenticationSlice = createSlice({
     reducers:{
         login: (state,action) => {
             if(action.payload.email == "amirnsamimi@gmail.com" && action.payload.password == "Amir123456@"){
-                
-                state = true
+                console.log(state)
                 const cookie = new Cookie("isLoggedIn",state)
                 cookie.setCookie(2)
+                state = true
             }
-            const cookie = new Cookie("isLoggedIn",state)
+        
             return state
         },
         logout: (state,action) => {
             state = false
             return state
+        },
+        loginState: () => {
+            const cookie = new Cookie();
+            return cookie.getCooie("isLoggedIn")
         }
     }
 })
 
-export const isAuth = state => state.authentication
+export const isAuth = state => {   const cookie = new Cookie();
+    return cookie.getCooie("isLoggedIn")}
 export const {login,logout} = AuthenticationSlice.actions;
 export default AuthenticationSlice.reducer;
