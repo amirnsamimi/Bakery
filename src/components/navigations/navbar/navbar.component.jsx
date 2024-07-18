@@ -89,9 +89,9 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-              <div className="h-6 w-6 md:h-8 md:w-8  rounded-full   bg-lightGray flex items-center justify-center  ">
+              <div className=" flex items-center justify-center  ">
                
-                {auth ?  <Link to="/user"><DynamicSvg
+                {auth ?  <Link className="h-6 w-6 md:h-8 md:w-8  flex items-center justify-center rounded-full bg-lightGray" to="/user"><DynamicSvg
                   className="md:hidden"
                   name="profile-twotone"
                   size="16"
@@ -102,7 +102,7 @@ const Navbar = () => {
                   name="profile-twotone"
                   size="24"
 
-                /></Link> : <Link to="/login" ><SubmitButton>ورود</SubmitButton></Link>}
+                /></Link> : <Link to="/login"  ><SubmitButton>ورود</SubmitButton></Link>}
 
             
               </div>
