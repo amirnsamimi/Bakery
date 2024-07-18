@@ -89,7 +89,7 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-              <div className="h-6  md:h-12  rounded-full  bg-lightGray flex items-center justify-center  ">
+              <div className="h-6 w-6 md:h-8 md:w-8  rounded-full   bg-lightGray flex items-center justify-center  ">
                
                 {auth ?  <Link to="/user"><DynamicSvg
                   className="md:hidden"
@@ -98,9 +98,10 @@ const Navbar = () => {
                 />
 
                 <DynamicSvg
-                  className="hidden md:flex"
+                  className="hidden md:flex "
                   name="profile-twotone"
                   size="24"
+
                 /></Link> : <Link to="/login" ><SubmitButton>ورود</SubmitButton></Link>}
 
             
