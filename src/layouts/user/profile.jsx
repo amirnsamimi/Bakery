@@ -12,7 +12,7 @@ const Profile = () => {
 
   return (
     <div className='linear-shade w-full h-full '>
-        <div className='w-full  p-8 pt-32'>
+        <div className='w-full  p-8 pt-32 '>
              
              <div>  <h1 className='font-bold text-[2rem]'>حساب کاربری </h1>
                <p className='text-line' >شما میتوانید اطلاعات حساب کاربری خود را ویرایش کنید.</p>
@@ -30,14 +30,14 @@ const Profile = () => {
               
         </div>
         <div>
-          <Form className='grid max-w-[200px] w-full gap-4'>
+          <Form className='grid max-w-[420px] w-full gap-4 '>
         <TextNormalInput readOnly value={"امیر"} />
         <TextNormalInput readOnly  value={"صمیمی"} />
         <TextNormalInput className='md:hidden' readOnly  value={"09124971667"} />
         <TextNormalInput placeholder='کدپستی' />
         <TextAreaInput placeholder='آدرس'/>
           <div className='flex gap-4'>
-          <BlueButton  style={{width:"165px", height:"45px"}} type="reset" > انصراف</BlueButton>   <SubmitButton  style={{width:"165px", height:"45px"}}  type="submit"> ذخیره تغییرات </SubmitButton>
+          <BlueButton  style={{width:"max-content", minWidth:"145px", height:"45px"}} type="reset" > انصراف</BlueButton>   <SubmitButton  style={{width:"max-content", minWidth:"145px", height:"45px"}}  type="submit"> ذخیره تغییرات </SubmitButton>
           </div>
           </Form>
         </div>
